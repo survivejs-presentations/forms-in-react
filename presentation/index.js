@@ -174,7 +174,7 @@ export default class Presentation extends React.Component {
           <iframe
             width="100%"
             height="600px"
-            src="http://redux-form.com/"
+            src="https://redux-form.com/"
           />
         </Slide>
 
