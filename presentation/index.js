@@ -117,6 +117,14 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={slideTransition}>
+          <iframe
+            width="100%"
+            height="600px"
+            src="https://swagger.io/"
+          />
+        </Slide>
+
+        <Slide transition={slideTransition}>
           <Heading size={2}>
             <Link href="http://json-schema.org/examples.html">Example</Link>
           </Heading>
