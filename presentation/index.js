@@ -16,7 +16,7 @@ import {
   Link,
   List,
   ListItem,
-  Markdown,
+  //Markdown,
   Quote,
   Slide,
   Table,
@@ -57,117 +57,124 @@ export default class Presentation extends React.Component {
       <Deck transition={slideTransition} transitionDuration={500} theme={theme}>
         <Slide transition={slideTransition} bgColor="secondary">
           <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
-            Template
+            Forms in React
           </Heading>
-        </Slide>
-
-        <Slide transition={slideTransition}>
-          <Heading caps fit size={1}>
-            JavaScript Usage on Sites
-          </Heading>
-          <Markdown>
-        {`
-* 2011 - 38.2%
-* 2013 - 60.4%
-* 2015 - 70.5%
-* 2016 - 73.5%
-* Source: [W3Techs](http://w3techs.com/technologies/history_overview/javascript_library/all/y)
-        `}
-          </Markdown>
-        </Slide>
-
-        <Slide transition={slideTransition}>
-          <Appear fid="1">
-            <Heading size={2} caps fit>
-              Inline JavaScript
-            </Heading>
-          </Appear>
-          <Appear fid="2">
-            <Heading size={2} caps fit textColor="tertiary">
-              AJAX (async)
-            </Heading>
-          </Appear>
-          <Appear fid="3">
-            <Heading size={2} caps fit>
-              Single Page Applications
-            </Heading>
-          </Appear>
-          <Appear fid="3">
-            <Heading size={2} caps fit textColor="tertiary">
-              Universal JavaScript
-            </Heading>
-          </Appear>
-        </Slide>
-
-        <Slide transition={slideTransition} bgColor="black">
-          <BlockQuote>
-            <Quote>Java is to JavaScript as car is to carpet</Quote>
-          </BlockQuote>
-        </Slide>
-
-        <Slide transition={slideTransition}>
-          <Heading caps fit size={1}>
-            Build Tools
-          </Heading>
-          <Layout>
-            <Table>
-              <thead>
-                <TableRow>
-                  <TableHeaderItem>1st Gen.</TableHeaderItem>
-                  <TableHeaderItem>2nd Gen.</TableHeaderItem>
-                  <TableHeaderItem>3rd Gen.</TableHeaderItem>
-                </TableRow>
-              </thead>
-              <tbody>
-                <TableRow>
-                  <TableItem>Make</TableItem>
-                  <TableItem>Grunt</TableItem>
-                  <TableItem>Browserify</TableItem>
-                </TableRow>
-                <TableRow>
-                  <TableItem />
-                  <TableItem>Gulp</TableItem>
-                  <TableItem>Webpack</TableItem>
-                </TableRow>
-                <TableRow>
-                  <TableItem />
-                  <TableItem>Broccoli</TableItem>
-                  <TableItem>JSPM</TableItem>
-                </TableRow>
-              </tbody>
-            </Table>
-          </Layout>
         </Slide>
 
         <Slide transition={slideTransition}>
           <Heading size={1}>
-            The Problem of Template
+            Approaches
           </Heading>
           <List>
-            <Appear><ListItem>Problem 1</ListItem></Appear>
-            <Appear><ListItem>Problem 2</ListItem></Appear>
-            <Appear><ListItem><Link href="https://facebook.github.io/flux/">Flux</Link> - Actions, stores, dispatcher</ListItem></Appear>
+            <Appear><ListItem>Handle forms with React alone</ListItem></Appear>
+            <Appear><ListItem>Use a schema (e.g. JSON Schema)</ListItem></Appear>
+            <Appear><ListItem>Use a solution that integrates with a state manager</ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition} bgColor="secondary">
+          <Heading size={2} textColor="tertiary" fit>
+            Handle Forms with React Alone
+          </Heading>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Heading size={1}>
+            Basic Idea
+          </Heading>
+          <List>
+            <Appear><ListItem>Leverage React <code>state</code></ListItem></Appear>
+            <Appear><ListItem>Handle validation yourself</ListItem></Appear>
+            <Appear><ListItem>Most flexible option</ListItem></Appear>
+            <Appear><ListItem>Eventually you will have a small form library</ListItem></Appear>
           </List>
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Image src={images.survivejs} margin="40px auto" height="324px" />
+          <Heading size={1}>
+            Exercises
+          </Heading>
+          <List>
+            <Appear><ListItem>Write a React form that captures a single input</ListItem></Appear>
+            <Appear><ListItem>Show the form state in a separate component (<code>JSON.stringify</code> state)</ListItem></Appear>
+            <Appear><ListItem>Validate that the field contains only characters (hint: regex)</ListItem></Appear>
+            <Appear><ListItem>Add another field that captures only numbers (hint: input type)*</ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition} bgColor="secondary">
+          <Heading size={2} textColor="tertiary">
+            <Link href="http://json-schema.org/" textColor="white">JSON Schema</Link>
+          </Heading>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <iframe
+            width="100%"
+            height="600px"
+            src="http://json-schema.org/"
+          />
         </Slide>
 
         <Slide transition={slideTransition}>
           <Heading size={2}>
-            Solution
+            <Link href="http://json-schema.org/examples.html">Example</Link>
+          </Heading>
+          <CodePane lang="json">
+        {`{
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "age": {
+      "description": "Age in years",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": ["firstName", "lastName"]
+}`}
+          </CodePane>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Heading size={1}>
+            Exercises
+          </Heading>
+          <List>
+            <Appear><ListItem>Define a JSON Schema for the form</ListItem></Appear>
+            <Appear><ListItem>Push validation to <Link href="https://www.npmjs.com/package/ajv">ajv</Link> or a similar solution</ListItem></Appear>
+            <Appear><ListItem>Try <Link href="https://mozilla-services.github.io/react-jsonschema-form/">react-jsonschema-form</Link>*</ListItem></Appear>
+            <Appear><ListItem>Try <Link href="https://github.com/gcanti/tcomb-json-schema">tcomb-json-schema</Link>*</ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition} bgColor="secondary">
+          <Heading size={2} textColor="tertiary">
+            Redux
           </Heading>
         </Slide>
 
         <Slide transition={slideTransition}>
-          <Heading size={4}>
-            Minimal Demo
+          <Heading size={1} fit>
+            Handling Forms with Redux
           </Heading>
-          <CodePane
-            lang="jsx"
-            source={require("raw-loader!../examples/demo.jsx")}
-            margin="20px auto"
+          <List>
+            <Appear><ListItem><Link href="https://goshakkk.name/should-i-put-form-state-into-redux/">Should I put form state into Redux?</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://medium.com/@steida/the-boring-react-redux-forms-a15ee8a6b52b">The boring React Redux forms</Link></ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <iframe
+            width="100%"
+            height="600px"
+            src="http://redux-form.com/"
           />
         </Slide>
 
@@ -176,9 +183,77 @@ export default class Presentation extends React.Component {
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>Exercise 1</ListItem></Appear>
-            <Appear><ListItem>*Exercise 2</ListItem></Appear>
-            <Appear><ListItem>**Exercise 3</ListItem></Appear>
+            <Appear><ListItem>Hook up Redux and implement the boring way</ListItem></Appear>
+            <Appear><ListItem>Connect <b>redux-form</b> and compare*</ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition} bgColor="secondary">
+          <Heading size={2} textColor="tertiary">
+            MobX
+          </Heading>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <iframe
+            width="100%"
+            height="600px"
+            src="https://foxhound87.github.io/mobx-react-form/"
+          />
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Heading size={1}>
+            Exercises
+          </Heading>
+          <List>
+            <Appear><ListItem>Hook up vanilla MobX</ListItem></Appear>
+            <Appear><ListItem>Connect <b>mobx-react-form</b> and compare*</ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition} bgColor="secondary">
+          <Heading size={2} textColor="tertiary">
+            Other Solutions
+          </Heading>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Heading size={1}>
+            Example Solutions
+          </Heading>
+          <List>
+            <Appear><ListItem><Link href="https://github.com/christianalfoni/formsy-react">formsy-react</Link> - Relies on a mixin :(</ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/jquense/react-formal">react-formal</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/gcanti/tcomb-form">tcomb-form</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/xtuc/unmarshaller">unmarshaller</Link></ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Heading size={1}>
+            Exercises
+          </Heading>
+          <List>
+            <Appear><ListItem>Figure out the core ideas of each solution</ListItem></Appear>
+            <Appear><ListItem>Port the form to one of the solutions*</ListItem></Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={slideTransition} bgColor="secondary">
+          <Heading size={2} textColor="tertiary">
+            Conclusion
+          </Heading>
+        </Slide>
+
+        <Slide transition={slideTransition}>
+          <Heading size={1}>
+            Main Ideas
+          </Heading>
+          <List>
+            <Appear><ListItem>You can manage forms with React alone up to a point</ListItem></Appear>
+            <Appear><ListItem>Abstraction hides some of the complexity</ListItem></Appear>
+            <Appear><ListItem>Problems: managing data, validation, UI layout</ListItem></Appear>
           </List>
         </Slide>
 
