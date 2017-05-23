@@ -167,6 +167,7 @@ export default class Presentation extends React.Component {
           <List>
             <Appear><ListItem><Link href="https://goshakkk.name/should-i-put-form-state-into-redux/">Should I put form state into Redux?</Link></ListItem></Appear>
             <Appear><ListItem><Link href="https://medium.com/@steida/the-boring-react-redux-forms-a15ee8a6b52b">The boring React Redux forms</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/j0nas/light-form">light-form</Link></ListItem></Appear>
           </List>
         </Slide>
 
@@ -184,6 +185,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <List>
             <Appear><ListItem>Hook up Redux and implement the boring way</ListItem></Appear>
+            <Appear><ListItem>Connect <b>light-form</b> and compare*</ListItem></Appear>
             <Appear><ListItem>Connect <b>redux-form</b> and compare*</ListItem></Appear>
           </List>
         </Slide>
