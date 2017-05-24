@@ -145,7 +145,9 @@ export default class Presentation extends React.Component {
       "minimum": 0
     }
   },
-  "required": ["firstName", "lastName"]
+  "required": [
+    "firstName", "lastName"
+  ]
 }`}
           </CodePane>
         </Slide>
