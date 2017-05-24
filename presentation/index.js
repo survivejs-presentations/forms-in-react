@@ -158,6 +158,7 @@ export default class Presentation extends React.Component {
             <Appear><ListItem>Define a JSON Schema for the form</ListItem></Appear>
             <Appear><ListItem>Push validation to <Link href="https://www.npmjs.com/package/ajv">ajv</Link> or a similar solution</ListItem></Appear>
             <Appear><ListItem>Try <Link href="https://mozilla-services.github.io/react-jsonschema-form/">react-jsonschema-form</Link>*</ListItem></Appear>
+            <Appear><ListItem>Try <Link href="https://github.com/Limenius/liform-react">liform-react</Link>*</ListItem></Appear>
             <Appear><ListItem>Try <Link href="https://github.com/gcanti/tcomb-json-schema">tcomb-json-schema</Link>*</ListItem></Appear>
           </List>
         </Slide>
@@ -176,6 +177,7 @@ export default class Presentation extends React.Component {
             <Appear><ListItem><Link href="https://goshakkk.name/should-i-put-form-state-into-redux/">Should I put form state into Redux?</Link></ListItem></Appear>
             <Appear><ListItem><Link href="https://medium.com/@steida/the-boring-react-redux-forms-a15ee8a6b52b">The boring React Redux forms</Link></ListItem></Appear>
             <Appear><ListItem><Link href="https://github.com/j0nas/light-form">light-form</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/davidkpiano/react-redux-form">react-redux-form</Link></ListItem></Appear>
           </List>
         </Slide>
 
@@ -194,6 +196,7 @@ export default class Presentation extends React.Component {
           <List>
             <Appear><ListItem>Hook up Redux and implement the boring way</ListItem></Appear>
             <Appear><ListItem>Connect <b>light-form</b> and compare*</ListItem></Appear>
+            <Appear><ListItem>Connect <b>react-redux-form</b> and compare*</ListItem></Appear>
             <Appear><ListItem>Connect <b>redux-form</b> and compare*</ListItem></Appear>
           </List>
         </Slide>
