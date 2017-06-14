@@ -95,10 +95,11 @@ export default class Presentation extends React.Component {
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>Write a React form that captures a single input</ListItem></Appear>
-            <Appear><ListItem>Show the form state in a separate component (<code>JSON.stringify</code> state)</ListItem></Appear>
-            <Appear><ListItem>Validate that the field contains only characters (hint: regex)</ListItem></Appear>
-            <Appear><ListItem>Add another field that captures only numbers (hint: input type)*</ListItem></Appear>
+            <Appear><ListItem>0. Write a React form that captures a single input (uncontrolled through a <Link href="https://css-tricks.com/react-forms-using-refs/">ref</Link>)</ListItem></Appear>
+            <Appear><ListItem>1. Write a React form that captures a single input (controlled through <code>value</code>/<code>onChange</code> pair <Link href="https://facebook.github.io/react/docs/forms.html">Reference</Link>)</ListItem></Appear>
+            <Appear><ListItem>2. Show the form state in a separate component (<code>JSON.stringify</code> state, see also <Link href="https://www.npmjs.com/package/form-serialize">form-serialize</Link>)</ListItem></Appear>
+            <Appear><ListItem>3. Validate that the field contains only characters (hint: regex)</ListItem></Appear>
+            <Appear><ListItem>4. Add another field that captures only numbers (hint: input type)*</ListItem></Appear>
           </List>
         </Slide>
 
@@ -157,11 +158,11 @@ export default class Presentation extends React.Component {
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>Define a JSON Schema for the form</ListItem></Appear>
-            <Appear><ListItem>Push validation to <Link href="https://www.npmjs.com/package/ajv">ajv</Link> or a similar solution</ListItem></Appear>
-            <Appear><ListItem>Try <Link href="https://mozilla-services.github.io/react-jsonschema-form/">react-jsonschema-form</Link>*</ListItem></Appear>
-            <Appear><ListItem>Try <Link href="https://github.com/Limenius/liform-react">liform-react</Link>*</ListItem></Appear>
-            <Appear><ListItem>Try <Link href="https://github.com/gcanti/tcomb-json-schema">tcomb-json-schema</Link>*</ListItem></Appear>
+            <Appear><ListItem>0. Define a JSON Schema for the form</ListItem></Appear>
+            <Appear><ListItem>1. Push validation to <Link href="https://www.npmjs.com/package/ajv">ajv</Link> or a similar solution such as <Link href="https://www.npmjs.com/package/async-validator">async-validator</Link></ListItem></Appear>
+            <Appear><ListItem>2. Try <Link href="https://mozilla-services.github.io/react-jsonschema-form/">react-jsonschema-form</Link>*</ListItem></Appear>
+            <Appear><ListItem>3. Try <Link href="https://github.com/Limenius/liform-react">liform-react</Link>*</ListItem></Appear>
+            <Appear><ListItem>4. Try <Link href="https://github.com/gcanti/tcomb-json-schema">tcomb-json-schema</Link>*</ListItem></Appear>
           </List>
         </Slide>
 
@@ -180,6 +181,7 @@ export default class Presentation extends React.Component {
             <Appear><ListItem><Link href="https://medium.com/@steida/the-boring-react-redux-forms-a15ee8a6b52b">The boring React Redux forms</Link></ListItem></Appear>
             <Appear><ListItem><Link href="https://github.com/j0nas/light-form">light-form</Link></ListItem></Appear>
             <Appear><ListItem><Link href="https://github.com/davidkpiano/react-redux-form">react-redux-form</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/rofrischmann/react-controlled-form">react-controlled-form</Link></ListItem></Appear>
           </List>
         </Slide>
 
@@ -196,10 +198,11 @@ export default class Presentation extends React.Component {
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>Hook up Redux and implement the boring way</ListItem></Appear>
-            <Appear><ListItem>Connect <b>light-form</b> and compare*</ListItem></Appear>
-            <Appear><ListItem>Connect <b>react-redux-form</b> and compare*</ListItem></Appear>
-            <Appear><ListItem>Connect <b>redux-form</b> and compare*</ListItem></Appear>
+            <Appear><ListItem>0. Hook up Redux and implement the boring way</ListItem></Appear>
+            <Appear><ListItem>1. Connect <b>light-form</b> and compare*</ListItem></Appear>
+            <Appear><ListItem>2. Connect <b>react-redux-form</b> and compare*</ListItem></Appear>
+            <Appear><ListItem>3. Connect <b>redux-form</b> and compare*</ListItem></Appear>
+            <Appear><ListItem>4. Connect <b>react-controlled-form</b> and compare*</ListItem></Appear>
           </List>
         </Slide>
 
@@ -222,8 +225,8 @@ export default class Presentation extends React.Component {
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>Hook up vanilla MobX</ListItem></Appear>
-            <Appear><ListItem>Connect <b>mobx-react-form</b> and compare*</ListItem></Appear>
+            <Appear><ListItem>0. Hook up vanilla MobX</ListItem></Appear>
+            <Appear><ListItem>1. Connect <b>mobx-react-form</b> and compare*</ListItem></Appear>
           </List>
         </Slide>
 
@@ -240,7 +243,10 @@ export default class Presentation extends React.Component {
           <List>
             <Appear><ListItem><Link href="https://github.com/christianalfoni/formsy-react">formsy-react</Link> - Relies on a mixin :(</ListItem></Appear>
             <Appear><ListItem><Link href="https://github.com/jquense/react-formal">react-formal</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/tannerlinsley/react-form">react-form</Link></ListItem></Appear>
             <Appear><ListItem><Link href="https://github.com/gcanti/tcomb-form">tcomb-form</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/react-component/form">rc-form</Link></ListItem></Appear>
+            <Appear><ListItem><Link href="https://github.com/25th-floor/revalidation">revalidation</Link></ListItem></Appear>
             <Appear><ListItem><Link href="https://github.com/xtuc/unmarshaller">unmarshaller</Link></ListItem></Appear>
           </List>
         </Slide>
@@ -250,8 +256,8 @@ export default class Presentation extends React.Component {
             Exercises
           </Heading>
           <List>
-            <Appear><ListItem>Figure out the core ideas of each solution</ListItem></Appear>
-            <Appear><ListItem>Port the form to one of the solutions*</ListItem></Appear>
+            <Appear><ListItem>0. Figure out the core ideas of each solution. Can you see common ideas or differences? List these up.</ListItem></Appear>
+            <Appear><ListItem>1. Port the form to one or more of the solutions*</ListItem></Appear>
           </List>
         </Slide>
 
