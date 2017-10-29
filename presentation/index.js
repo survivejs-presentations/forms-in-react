@@ -360,6 +360,13 @@ export default class Presentation extends React.Component {
           <List>
             <Appear>
               <ListItem>
+                <Link href="https://github.com/MadRabbit/a-plus-forms">
+                  a-plus-forms
+                </Link>
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
                 <Link href="https://github.com/christianalfoni/formsy-react">
                   formsy-react
                 </Link>{" "}
